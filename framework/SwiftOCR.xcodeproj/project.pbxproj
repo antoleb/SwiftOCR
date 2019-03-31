@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1295746422514A67008EF58B /* activated_model_2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1295746322514A67008EF58B /* activated_model_2.mlmodel */; };
 		372578B71CD9259600785B68 /* CrossPlatformSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37711DEE1CD7E8A300DC6B43 /* CrossPlatformSupport.swift */; };
 		372578BF1CDA026E00785B68 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 373ED1401CC9521B00C4758B /* GPUImage.framework */; };
 		373ED0B31CC9071D00C4758B /* SwiftOCR.h in Headers */ = {isa = PBXBuildFile; fileRef = 373ED0B21CC9071D00C4758B /* SwiftOCR.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -101,6 +102,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1295746322514A67008EF58B /* activated_model_2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = activated_model_2.mlmodel; sourceTree = "<group>"; };
 		373ED0AF1CC9071C00C4758B /* SwiftOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		373ED0B21CC9071D00C4758B /* SwiftOCR.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftOCR.h; sourceTree = "<group>"; };
 		373ED0B41CC9071D00C4758B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 		373ED0B11CC9071D00C4758B /* SwiftOCR */ = {
 			isa = PBXGroup;
 			children = (
+				1295746322514A67008EF58B /* activated_model_2.mlmodel */,
 				373ED0C91CC9076300C4758B /* SwiftOCR.swift */,
 				373ED0CA1CC9076300C4758B /* SwiftOCRTraining.swift */,
 				373ED1281CC912C000C4758B /* OCR-Network */,
@@ -515,6 +518,7 @@
 				373ED0CC1CC9076300C4758B /* SwiftOCRTraining.swift in Sources */,
 				37711DEF1CD7E8A300DC6B43 /* CrossPlatformSupport.swift in Sources */,
 				373ED10C1CC90A2300C4758B /* Matrix.swift in Sources */,
+				1295746422514A67008EF58B /* activated_model_2.mlmodel in Sources */,
 				373ED1161CC90A2300C4758B /* Vector.swift in Sources */,
 				373ED19A1CC9634500C4758B /* UnionFind.swift in Sources */,
 				373ED10A1CC90A2300C4758B /* FFNN.swift in Sources */,
@@ -705,7 +709,7 @@
 				);
 				INFOPLIST_FILE = SwiftOCR/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = camenisch.nicolas.SwiftOCR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -733,7 +737,7 @@
 				);
 				INFOPLIST_FILE = SwiftOCR/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = camenisch.nicolas.SwiftOCR;
 				PRODUCT_NAME = "$(TARGET_NAME)";

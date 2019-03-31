@@ -7,6 +7,7 @@
 //
 
 import GPUImage
+import CoreML
 
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     switch (lhs, rhs) {
@@ -38,6 +39,8 @@ open class SwiftOCR {
     
 	fileprivate		var characters = recognizableCharacters
 	fileprivate     var network = globalNetwork
+    
+    var mlmodel = activated_model_2()
 	
     //MARK: Setup
     
@@ -75,7 +78,6 @@ open class SwiftOCR {
 		self.delegate = delegate
 		self.recognize(image, completionHandler)
 	}
-	
 	public   init(recognizableCharacters: String, network: FFNN, image: OCRImage, delegate: SwiftOCRDelegate?, _ completionHandler: @escaping (String) -> Void) {
 		self.characters = recognizableCharacters
 		self.network = network
@@ -115,7 +117,22 @@ open class SwiftOCR {
             for blob in blobs {
                 do {
                     let blobData       = self.convertImageToFloatArray(blob.0, resize: true)
-                    let networkResult  = try self.network.update(inputs: blobData)
+                    guard let mlMultiArray = try? MLMultiArray(shape:[1, 1, 321, 1, 1], dataType:MLMultiArrayDataType.float32) else {
+                        fatalError("Unexpected runtime error. MLMultiArray")
+                    }
+                    
+                    for (index, element) in blobData.enumerated() {
+                        mlMultiArray[index] = NSNumber(value: element)
+                    }
+                    
+                    //let networkResult  = try self.network.update(inputs: blobData)
+                    let modelOutput = try self.mlmodel.prediction(input_1: mlMultiArray)._8
+                    
+                    let networkResult = (0..<modelOutput.count).map {
+                        return modelOutput[$0].floatValue
+                    }
+                    
+
                     
                     //Generate Output Character
                     if networkResult.max() >= self.confidenceThreshold {
